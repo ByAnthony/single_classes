@@ -1,3 +1,5 @@
+import java.io.PrintStream;
+
 public class Printer {
 
     private int paper;
@@ -16,13 +18,13 @@ public class Printer {
         return tonerVolume;
     }
 
-    public int print(int numberPages, int numberCopies){
+    public void print(int numberPages, int numberCopies){
         int toPrint = numberCopies * numberPages;
         if(paper >= toPrint) {
             paper -= toPrint;
             tonerVolume -= toPrint;
         }
-            return paper;
+            System.out.println("Sorry, not enough paper");
     }
 
 }
